@@ -1,0 +1,40 @@
+strategy:
+  matrix:
+    linux:
+      imageName: 'ubuntu-16.04'
+    windows:
+      imageName: 'windows-2019'
+
+trigger:
+- master
+
+pool:
+  vmImage: $(imageName)
+
+variables:
+- name: DOTNET_SKIP_FIRST_TIME_EXPERIENCE
+  value: 1
+steps:
+#- task: DownloadSecureFile@1
+#  name: snkFile
+#  inputs:
+#    secureFile: 'NumberToWords-Release.snk'
+- pwsh: ./build.ps1 -t ci
+  displayName: 'Build'
+  env: 
+    kek: $(kek)
+#    key_file: $(snkFile.secureFilePath)
+
+- task: PublishTestResults@2
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
+    failTaskOnFailedTests: true
+
+- task: NuGetCommand@2
+  inputs:
+    command: push
+    packagesToPush: '$(Build.SourcesDirectory)/.build/packages/*.nupkg'
+    nuGetFeedType: external
+    publishFeedCredentials: 'nuget.org'
+  condition: eq( variables['Agent.OS'], 'Windows_NT' ) 
