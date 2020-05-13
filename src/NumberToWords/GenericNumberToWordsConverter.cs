@@ -99,7 +99,8 @@ namespace NumberToWords
         wordsBuilder.Append(currencyName.Trim());
       }
 
-      if (!string.IsNullOrEmpty(decimalString)) {
+      if (!string.IsNullOrEmpty(decimalString))
+      {
         wordsBuilder.Append(opt.WordSeparator);
         wordsBuilder.Append($"{_converterDictionary.GetAnd()}");
         wordsBuilder.Append(opt.WordSeparator);

@@ -7,7 +7,7 @@
     <DocumentationFile Condition="'$(Configuration)'=='Release'">bin\$(Configuration)\$(TargetFramework)\NumberToWords.xml</DocumentationFile>
     <DebugType>embedded</DebugType>
     <LangVersion>8</LangVersion>
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <PackageId>H.NumberToWords</PackageId>
   </PropertyGroup>
   <ItemGroup>
