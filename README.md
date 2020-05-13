@@ -1,14 +1,16 @@
 # NumberToWords
 A small extensible library for .NET that converts numbers/currency into words representation with i18n capability.
 
-[![Build Status](https://dev.azure.com/HenkaProgrammer/Number%20To%20Words/_apis/build/status/H.NumberToWords?branchName=master)](https://dev.azure.com/HenkaProgrammer/Number%20To%20Words/_build/latest?definitionId=3&branchName=master)
-
 ### Get Started
 NumberToWords can be installed using the Nuget package manager or the `dotnet` CLI.
 
 ```
 Install-Package H.NumberToWords
 ```
+
+[![Build Status](https://dev.azure.com/HenkaProgrammer/Number%20To%20Words/_apis/build/status/H.NumberToWords?branchName=master)](https://dev.azure.com/HenkaProgrammer/Number%20To%20Words/_build/latest?definitionId=3&branchName=master)
+
+[![NuGet](https://img.shields.io/nuget/v/H.NumberToWords.svg)](https://nuget.org/packages/H.NumberToWords)
  
 ### Example
 Should initialize the static Converter at application startup before usage.
