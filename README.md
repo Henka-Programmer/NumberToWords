@@ -13,16 +13,34 @@ Install-Package H.NumberToWords
 ### Example
 Should initialize the static Converter at application startup before usage.
 ```csharp
-using NumberToWords;
-
 // ...
-Converter.Initialize();
+NumberToWords.Converter.Initialize();
 // ...
 ```
 Then you can use the static instance everywhere
 ```csharp
 var number = 120.0;
-var words = Converter.ConvertToWords(number);
+var words = NumberToWords.Converter.ConvertToWords(number);
+```
+You can provide extra options such as language and currency.
+```csharp
+var number = 22365.0;
+NumberToWords.Converter.ConvertToWords(number, options =>
+{
+    options.CurrencyCode = "USD"; // currency ISO 4217 code.
+    options.LanguageCode = "en";  // words language ISO 639-1 code.
+    options.LetterCase = NumberToWords.LetterCase.Lowercase; // character casing, lower, upper, title, sintence 
+    options.WordSeparator = " "; // words separator by default space
+});
+```
+or you can use a specific language converter
+```csharp
+using NumberToWords.Language;
+
+// ...
+var englishConverter = new EnglishNumberToWordsConverter();
+var number = 120.0;
+var words = englishConverter.ConvertToWords(number);
 ```
 ### Documentation
 
