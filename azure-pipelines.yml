@@ -36,5 +36,6 @@ steps:
     command: push
     packagesToPush: '$(Build.SourcesDirectory)/.build/packages/*.nupkg'
     nuGetFeedType: external
+    allowPackageConflicts: true
     publishFeedCredentials: 'nuget.org'
   condition: eq( variables['Agent.OS'], 'Windows_NT' ) 

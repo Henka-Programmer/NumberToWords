@@ -1,14 +1,13 @@
 <Project>
   <PropertyGroup>
-    <VersionPrefix>9.0.0</VersionPrefix>
+    <VersionPrefix>0.1.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Abderrazak Henka</Authors>
     <LangVersion>8</LangVersion>
     <NoWarn>$(NoWarn);1701;1702;1591</NoWarn>
     <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
-    <!--<PackageProjectUrl>https://number2words.net</PackageProjectUrl>-->
     <Copyright>Copyright (c) .NET Foundation and contributors 2008-2020</Copyright>
-    <!--<RepositoryUrl>https://github.com/Henka-Programmer/number-to-words</RepositoryUrl>-->
+    <RepositoryUrl>https://github.com/Henka-Programmer/NumberToWords</RepositoryUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <NeutralLanguage>en</NeutralLanguage>
